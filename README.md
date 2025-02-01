@@ -44,22 +44,15 @@ MONGO_URI=your_mongodb_connection_string
 SESSION_SECRET=your_secret_key  
 # 2️⃣ Install Dependencies  
 Run the following command to install required packages:  
-
-bash  
-Copy  
-Edit  
 npm install  
+
 # 3️⃣ Build & Run the App  
 🔨 Build the App  
-bash 
-Copy
-Edit
 npm run build
+
 ▶️ Start the App
-bash  
-Copy  
-Edit  
-npm start  
+npm start
+
 🌎 Deployment  
 The app is ready for deployment using Render or any cloud provider of your choice.  
 
