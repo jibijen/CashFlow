@@ -12,8 +12,29 @@ Welcome to the MERN GraphQL Expense Tracker App! This project helps you efficien
 ✅ Automations – Cron jobs for scheduled tasks and background processing  
 ✅ Optimized Performance – Fast, scalable, and efficient  
 
-# ⚙️ Setup  
-1️⃣ Configure Environment Variables  
+# Screenshots
+
+![Screenshot 2025-02-01 185633](https://github.com/user-attachments/assets/6e1c2005-df13-4696-9274-b0c987bb5276)
+
+![Screenshot 2025-02-01 185626](https://github.com/user-attachments/assets/25659964-64bb-42a1-adc8-1694d41d0f53)
+
+
+![Screenshot 2025-02-01 185501](https://github.com/user-attachments/assets/20d30f9a-f674-4c25-8e7e-dfadb35496a3)
+
+![Screenshot 2025-02-01 185521](https://github.com/user-attachments/assets/a5d51298-bc94-4921-826d-2a27d5e593b5)
+
+
+![Screenshot 2025-02-01 185552](https://github.com/user-attachments/assets/aab27462-a574-4288-93c3-b0ef919b95d2)
+
+
+![Screenshot 2025-02-01 185610](https://github.com/user-attachments/assets/1a9793e5-ece2-4d10-b0c8-8546bdfd0084)
+
+
+
+
+
+# ⚙️ Setup    
+# 1️⃣ Configure Environment Variables  
 Create a .env file in the root directory and add:  
 
 ini  
