@@ -35,11 +35,8 @@ Welcome to the MERN GraphQL Expense Tracker App! This project helps you efficien
 
 # ⚙️ Setup    
 # 1️⃣ Configure Environment Variables  
-Create a .env file in the root directory and add:  
 
-ini  
-Copy  
-Edit  
+Create a .env file in the root directory and add:  
 MONGO_URI=your_mongodb_connection_string  
 SESSION_SECRET=your_secret_key  
 # 2️⃣ Install Dependencies  
