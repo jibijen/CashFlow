@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "NODE_ENV=production node backend/index.js",
-		"dev": "NODE_ENV=development nodemon backend/index.js",
+		"dev": "cross-env NODE_ENV=development nodemon backend/index.js",
 		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
 	},
 	"type": "module",
@@ -27,6 +27,7 @@
 		"passport": "^0.7.0"
 	},
 	"devDependencies": {
+		"cross-env": "^10.0.0",
 		"nodemon": "^3.1.0"
 	}
 }

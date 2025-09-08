@@ -28,6 +28,7 @@ job.start();
 
 const __dirname = path.resolve();
 const app = express();
+const PORT = process.env.PORT || 4000;
 
 const httpServer = http.createServer(app);
 
@@ -62,11 +63,8 @@ const server = new ApolloServer({
 	plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 });
 
-// Ensure we wait for our server to start
 await server.start();
 
-// Set up our Express middleware to handle CORS, body parsing,
-// and our expressMiddleware function.
 app.use(
 	"/graphql",
 	cors({
@@ -74,22 +72,22 @@ app.use(
 		credentials: true,
 	}),
 	express.json(),
-	// expressMiddleware accepts the same arguments:
-	// an Apollo Server instance and optional configuration options
 	expressMiddleware(server, {
 		context: async ({ req, res }) => buildContext({ req, res }),
 	})
 );
 
-// npm run build will build your frontend app, and it will the optimized version of your app
-app.use(express.static(path.join(__dirname, "frontend/dist")));
+// This code serves the static files from the React app only in production
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "frontend/dist")));
 
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
-});
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+	});
+}
 
 // Modified server startup
-await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+await new Promise((resolve) => httpServer.listen({ port: PORT }, resolve));
 await connectDB();
 
-console.log(`🚀 Server ready at http://localhost:4000/graphql`);
+console.log(`🚀 Server ready at http://localhost:${PORT}/graphql`);
